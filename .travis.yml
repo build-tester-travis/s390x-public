@@ -1,6 +1,13 @@
 os: linux
-arch: ppc64le
-dist: bionic
-language: minimal
-script:
-- echo "test"
+arch: s390x
+dist: focal
+jobs:
+  include:
+    - name: "Job 1 - s390x"
+      dist: focal
+      script:
+        - echo "Running s390x Job 1"
+    - name: "Job 2 - s390x"
+      dist: bionic
+      script:
+        - echo "Running s390x Job 2"
